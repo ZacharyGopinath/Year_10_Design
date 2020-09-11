@@ -1,0 +1,52 @@
+body{
+    margin:0px;
+    background-color:#282a36 ;
+    color:#f8f8f2;
+    font-family: sans-serif;
+}
+
+.titleBox{
+    height:auto;
+    widows: 100px;
+    transition:0.2s;
+    background-color:#44475a;
+    border:2px solid #ff79c6;
+    margin-top:5px;
+}
+
+.titleBox:hover{
+    transition:0.2s;
+    background-color:#ff79c6;
+    border:2px solid #f8f8f2
+}
+
+#title{
+    text-align: center;
+}
+
+.selectorDiv{
+    font-size: 20px;
+    margin-top:15px;
+    margin-bottom: 0px;
+    text-align: center;
+    align-items: center;
+}
+
+.submitButton{
+    margin-top:10px;
+    text-align: center;
+    cursor: pointer; 
+}
+
+.outputBox{
+    margin-top:10px;
+    text-align: center;
+}
+
+#keyCanvas{
+    height:250px;
+    width:520px;
+    text-align: center;
+    background-color: #44475a;
+    border:2px solid #ff79c6;
+}
