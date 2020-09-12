@@ -23,7 +23,8 @@ encDict = {
     "T":"{", "Y":";",
     "U":"}", "Z":"?",
     "V":"<", ",":",",
-    "W":"Q", " ":" "
+    "W":"Q", " ":" ",
+    ".":"."
 }
 
 unEncDict = {
@@ -36,18 +37,14 @@ unEncDict = {
     "Z":"G", "'":"P",
     "!":"H", ")":"Q",
     "@":"I", "[":"R",
-
     "]":"S", "/":"X",
     "{":"T", ";":"Y",
     "}":"U", "?":"Z",
     "<":"V", ",":",",
-    "Q":"W", " ":" "
+    "Q":"W", " ":" ",
+    ".":"."
 }
 
-'''
-for key, value in encDict.items():
-    print(encDict[key])
-'''
 word = input("Which word would you like to translate: ").upper()
 
 toFrom = input("Would you like to encrypt (A) or decrypt (B): ")

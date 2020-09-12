@@ -4,9 +4,11 @@
 word = input("What word/number would you like to check: ")
 sortedWord = sorted(word)
 dupChar = False
+dupCharStr = ''
 for i in range(0,len(sortedWord),1):
     if sortedWord[i] == sortedWord[i-1]:
         dupChar = True
+        dupCharStr = dupCharStr+sortedWord[i]
         break
-print("Duplicate Character Found:",dupChar,"!")
+print("Duplicate Character Found:",dupChar,",",dupCharStr)
         

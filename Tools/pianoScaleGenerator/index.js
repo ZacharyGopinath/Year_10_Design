@@ -6,7 +6,7 @@
 
   //white keys
 
-  ctx.fillStyle = "FFF"
+  ctx.fillStyle = "white"
   ctx.beginPath();
   ctx.rect(5, 5, 20,100);
   ctx.rect(25, 5, 20,100);
@@ -27,7 +27,7 @@
 
   //black keys
   ctx.beginPath();
-  ctx.fillStyle = "#000";
+  ctx.fillStyle = "black";
   
   ctx.rect(20, 5, 10,50); //black
   ctx.rect(40, 5, 10,50); //black
