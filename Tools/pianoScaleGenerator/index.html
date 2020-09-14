@@ -6,6 +6,7 @@
     <title>Piano Scale Generator</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='index.css'>
+    <link rel="icon" href="logo.png">
 </head>
 <body>
     <div class="titleBox">
@@ -15,6 +16,7 @@
     <div class="selectorDiv">
         <label>Please Select A Key</label>
         <select id = "scale_key">
+            <option hidden disabled selected value>A-G</option>
             <option value = "0">A</option>
             <option value = "1">A#</option>
             <option value = "2">B</option>
@@ -31,13 +33,14 @@
         
         <label>Please Select A Scale</label>
         <select id="scaleSelector">
+            <option hidden disabled selected value>M/m</option>
             <option value = "1">Major</option>
             <option value = "2">Minor</option>
         </select>
     </div>
 
     <div class="submitButton">
-        <input type="submit">
+        <input type="submit" onclick="calculate()">
     </div>
 
     <div class="outputBox">

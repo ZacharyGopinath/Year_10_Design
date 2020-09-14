@@ -38,6 +38,10 @@ body{
     cursor: pointer; 
 }
 
+#scale_key{
+    
+}
+
 .outputBox{
     margin-top:10px;
     text-align: center;
@@ -47,6 +51,6 @@ body{
     height:250px;
     width:520px;
     text-align: center;
-    background-color: #44475a;
-    border:2px solid #ff79c6;
+    background-color: #f8f8f2;
+    border:3px solid #ff79c6;
 }
