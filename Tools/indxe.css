@@ -1,0 +1,11 @@
+body{
+    background-color: #282a36;
+    color:#f8f8f2;
+}
+
+#testHeader{
+    height:30px;
+    width:100%;
+    background-color: #bd93f9;
+    border:2px solid #f8f8f2;
+}
