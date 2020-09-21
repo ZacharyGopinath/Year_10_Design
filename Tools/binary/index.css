@@ -33,6 +33,7 @@ body{
 .inputBox{
     margin-top:10px;
     text-align: center;
+    font-family: 'Roboto Mono', monospace, sans-serif;
 }
 
 #input{
@@ -40,6 +41,7 @@ body{
     width:15%;
     box-sizing: border-box;
     border:2px solid #27b345;
+    font-family : inherit;
 }
 
 .buttonDiv{

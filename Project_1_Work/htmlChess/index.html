@@ -6,20 +6,47 @@
     <title>HTML Chess</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='index.css'>
+    <link rel="icon" href="index.png">
 </head>
 <body>
-    <div class = "puzzle">
-        <h1>Daily Puzzle</h1>
-        <div class="puzzleDiv">
-        <iframe src="https://lichess.org/training/frame?theme=blue&bg=dark"
-        allowtransparency="true" frameborder="0"></iframe>
+    <div class="options">
+        <div class="optionA">
+            <h1 id="practice" onClick="change()">Practice</h1>
         </div>
-        <div class="tvDiv">
-        <iframe src="https://lichess.org/tv/frame?theme=blue&bg=dark"
-        allowtransparency="true" frameborder="0"></iframe>
+        <div class="optionA">
+            <h1 id="watch" onClick="change()">Watch</h1>
+        </div>
+        <div class="optionA">
+            <h1 id="play" onClick="change()">Play</h1>
         </div>
     </div>
-    
+
+    <div class="chessSect">
+        <div id="PRACTICE">
+        <h1>Daily Puzzle</h1>
+            <div class="puzzleDiv">
+                <!-- <iframe src="https://lichess.org/training/frame?theme=blue&bg=dark" -->
+            style = "height:444px; width:400px;" allowtransparency="true" frameborder="0"></iframe>
+            </div>
+        </div>
+        <div id="WATCH">
+            <h1>Watch Lichess TV</h1>
+            <div class="tvDiv">
+                <!-- <iframe src="https://lichess.org/tv/frame?theme=blue&bg=dark" -->
+            style = "height:444px; width:400px;" allowtransparency="true" frameborder="0"></iframe>
+            </div>
+        </div>
+        <div id="PLAY">
+            <h1>Play Blitz Chess Online</h1>
+            <div class="chessBase">
+                <iframe src="https://play.chessbase.com" 
+                style="width:760px;height:480px;"></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="constPlay">
+        <iframe src="https://play.chessbase.com" style="width:760px;height:480px"></iframe>
+    </div>  
     <script src='index.js'></script>
 </body>
 </html>
