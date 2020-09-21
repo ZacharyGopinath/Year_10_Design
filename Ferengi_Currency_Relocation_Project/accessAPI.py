@@ -8,9 +8,8 @@ import tkinter as tk
 country = []
 value = []
 
-
 def change(x):
-	i= country.index(x)
+	i = country.index(x)
 	print(value[i])
 
 	print()
@@ -34,8 +33,6 @@ for key in data:
 	country.append(key)
 	value.append(data[key])
 
-
-#*************************************************************************
 root = tk.Tk()
 
 cur_label = tk.Label(root, text = "Select Currency")
