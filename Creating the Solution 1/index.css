@@ -1,0 +1,27 @@
+:root{
+    --text-primary:#f8f8f2;
+    --text-secondary:#ff5555;
+    --bg-primary:#44475a;
+    --bg-secondary:#6272a4;
+    --bg-darkmode:#282a36;
+    --font-family:'Roboto', 'sans-serif';
+}
+
+body{
+    font-family:var(--font-family);
+    margin:0px;
+    transition:0.2s;
+    background-color:var(--bg-darkmode);
+    color:var(--text-primary);
+}
+.topHeader{
+    border:2px solid var(--text-primary);
+    display:flex;
+}
+#logo{
+    width:100px;
+    height:100px;
+}
+#title{
+    font-size: 100px;
+}
