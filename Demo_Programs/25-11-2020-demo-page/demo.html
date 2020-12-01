@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Demo Web Page</title>
+     <!--Import Google Icon Font-->
+     <!-- Compiled and minified CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+     <!-- Compiled and minified JavaScript -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> 
+     <!--Import Google Icon Font-->
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <!--Let browser know website is optimized for mobile-->
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel='stylesheet' type='text/css' media='screen' href='demo.css'>
+    <link rel="icon" href="fblogo.png">
+</head>
+<body>
+    <div class='containter'>
+        <center>
+            <h1>Form and Live Update</h1>
+            <a class="waves-effect waves-light btn" onclick='removeUser()' style='background-color:#ff5555;'>Remove Id</a>
+            <input type="text" id='name' placeholder="Input Name" style='text-align:center;font-size:25px;'>
+
+            <input type="text" id='food' placeholder="Input Food" style='text-align:center;font-size:25px;'>
+            <input type="text" id='user' placeholder="User" style='text-align:center;font-size:25px;'>
+            <a class="waves-effect waves-light btn" onclick='writeUserData()' style='background-color:#ff5555;'>Write Data</a>
+
+            <input type="text" id='id' placeholder="Input User Id" style='text-align:center;font-size:25px;'>
+            <a class="waves-effect waves-light btn" onclick='getUserData()' style='background-color:#ff5555;'>Get Id</a>
+           
+            <div id='live'>
+                <h3>Live Update</h3>
+                <h3 id='result'></h3>
+                <center>
+                <table class='table'>
+                    <tr><th id='tableTitle'>ID</th><th id='idname'></th></tr>
+                    <tr><th id='tableTitle'>Name</th><th id='username'></th></tr>
+                    <tr><th id='tableTitle'>Food</th><th id='userfood'></th></tr>
+                </table>
+            </center>
+            </div>
+        </center>
+    </div>
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
+
+    <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyAr0J-PXfZwxRbio0dWtxt64qd9O4sB2kY",
+        authDomain: "year10designfirebasedemozg.firebaseapp.com",
+        databaseURL: "https://year10designfirebasedemozg.firebaseio.com",
+        projectId: "year10designfirebasedemozg",
+        storageBucket: "year10designfirebasedemozg.appspot.com",
+        messagingSenderId: "445964366173",
+        appId: "1:445964366173:web:c307374f6ab987c38c38b4",
+        measurementId: "G-PWQ5DD6X6Q"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+    var database = firebase.database();
+
+    var updateDisplay = database.ref('users/');
+    updateDisplay.on('value', (snapshot) =>{
+        const data = snapshot.val();
+        const dataStr = JSON.stringify(data);
+        console.log('Data:' + data);
+        console.log('***********')
+        console.log('Data String: ' + dataStr)
+        //document.getElementById('result').innerHTML = dataStr
+    });
+
+    function writeUserData(userId) {
+        userId = document.getElementById('user').value;
+        const food = document.getElementById('food').value;
+        const name = document.getElementById('name').value;
+        firebase.database().ref('users/' + userId).set({
+            food: food,
+            name: name
+        });
+        }
+    
+    function getUserData(id){
+        id = document.getElementById('id').value
+        var userIdName= database.ref('users/' + id + '/name');
+        var userFood= database.ref('users/' + id + '/food');
+        userIdName.on('value', (snapshot) =>{
+            const Ndata = snapshot.val();
+            document.getElementById('idname').innerHTML = id;
+            document.getElementById('username').innerHTML = Ndata;
+        userFood.on('value', (snapshot) =>{
+            const Fdata = snapshot.val();
+            document.getElementById('userfood').innerHTML = Fdata
+        })
+    })}
+
+    function addId(){
+        var rootRef = firebase.database().ref();
+        var newid = document.getElementById('user').value;
+        var idRef = rootRef.child('users/' + newid);
+        var newidRef = idRef.push();
+        newidRef.set({
+            name: document.getElementById('name').value,
+            food: document.getElementById('food').value
+        });
+        }
+    
+    function removeUser(remover){
+        let id = document.getElementById('id').value;
+        remover = firebase.database().ref('users/' + id)
+        remover.remove();
+    }
+
+    </script>
+    <script type='text/javascript' src='demo.js'></script>
+</body>
+</html>

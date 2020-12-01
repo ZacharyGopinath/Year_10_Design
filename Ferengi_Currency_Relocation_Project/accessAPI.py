@@ -26,9 +26,6 @@ resp = requests.get('http://data.fixer.io/api/latest&USD?access_key='+key)
 #Converts response to JSON
 data = resp.json()["rates"]
 
-
-
-
 for key in data:
 	country.append(key)
 	value.append(data[key])

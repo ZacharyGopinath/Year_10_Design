@@ -1,0 +1,4 @@
+https://www.npmjs.com/package/chessboardjs
+https://chessboardjs.com/docs
+https://chessboardjs.com/examples.html#1000
+https://www.npmjs.com/package/pgn-parser

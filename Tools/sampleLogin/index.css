@@ -1,0 +1,43 @@
+body{
+    margin:0;
+    background:#282a36;
+    color:#f8f8f2;
+    font-family:sans-serif;
+}
+
+#title{
+    font-size: 50px;
+    text-align: center;
+    margin-top: none;
+}
+
+.input{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:10px;
+}
+#uinput{
+    text-align: center;
+    font-family: inherit;
+    font-size: 30px;
+}
+#pinput{
+    text-align: center;
+    font-family: inherit;
+    font-size: 30px;
+}
+#submit{
+    margin-top:5px;
+    font-size: 20px;
+    text-align: center;
+    background-color:#f8f8f2;
+    padding:5px;
+    text-decoration:none;
+    border:none;
+}
+
+#result{
+    font-size:30px;
+    text-align: center;
+}

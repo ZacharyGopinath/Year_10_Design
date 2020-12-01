@@ -1,0 +1,26 @@
+body{
+    margin:0px;
+    color:#f8f8f2;
+    background-color:#282a36;
+    font-family: sans-serif;
+}
+
+#titleId{
+    background-color:#44475a;
+    color:#f8f8f2;
+    border:2px solid #f8f8f2;
+    text-align: center;
+}
+
+.inputBoxes{
+    text-align: center;
+    justify-items: center;
+    margin-top:10px;
+}
+
+#outputBoxes{
+    margin-top: 20px;
+    text-align: center;
+    background-color:#44475a;
+    border:2px solid #f8f8f2;
+}

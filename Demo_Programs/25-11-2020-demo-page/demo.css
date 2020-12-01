@@ -1,0 +1,32 @@
+body{
+    margin:10px;
+}
+
+.table{
+    border:1px solid #ff5555;
+    width:50%;
+    text-align: left;
+}
+
+td, th{
+    border:1px solid #ddd;
+    text-align: left;
+    padding:8px;
+}
+
+tr:nth-child(odd) {
+    background-color: #dddddd;
+  }
+#tableTitle{
+    width:50%;
+    border:1px solid #ff5555;
+}
+#idname{
+    border:1px solid #ff5555;
+}
+#username{
+    border:1px solid #ff5555;
+}
+#userfood{
+    border:1px solid #ff5555;
+}
