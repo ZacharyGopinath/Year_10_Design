@@ -1,20 +1,18 @@
-var v = ''
+var v
 function search() {
-    v = v + document.getElementById('searchBar').value;
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             var rootRef = firebase.database().ref();
+            v = v + document.getElementById('searchBar').value;
             rootRef.child('users/' + v).on("value", function (snapshot) {
-
+                const snapshotData = snapshot.val();
                 if (snapshot.exists()) {
-                    console.log(v);
                     window.location.replace('result.html');
                 }
                 else if (snapshotData == null) {
 
                     window.alert('user does not exist')
                 }
-                else { console.error('Neither Statements Are True') };
             });
 
         }
@@ -25,11 +23,11 @@ function search() {
         }
     });
 }
-function onResultLoaded(hobby, food, subject, year, email, v) {
-  
-    console.log('From second fn: ' + v);
+function onResultLoaded(hobby, food, subject, year, email) {
+    console.log(v);
+}
 
-    /*
+/*
     var userList = []
     var rootRef = firebase.database().ref();
     rootRef.child('users/' + v).on("value", function (snapshot) {
@@ -67,4 +65,3 @@ function onResultLoaded(hobby, food, subject, year, email, v) {
         document.getElementById('profileEmail').innerHTML = "<span id='profileSpan'>Email: </span>" + userList[4] + "</p>";
     })
     */
-}
