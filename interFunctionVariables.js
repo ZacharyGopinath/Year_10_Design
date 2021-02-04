@@ -1,4 +1,4 @@
-var v
+var v = ''
 function search() {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
